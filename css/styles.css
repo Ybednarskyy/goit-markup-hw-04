@@ -7,9 +7,11 @@
   --header-logo-color: #000000;
   --section-bg-color: #f5f4fa;
   --background-dark-color: #2f303a;
+  --bacground-gradient-color: rgba(47, 48, 58, 0.4);
   --address-item-color: rgba(255, 255, 255, 0.6);
   --header-border-color: #ececec;
   --item-border-color: #eeeeee;
+  --icons-color: #afb1b8;
 }
 
 /* Стилі які наслідуються */
@@ -115,15 +117,17 @@ img {
   margin-left: auto;
 }
 
-.auth-nav-phone {
+.auth-nav-item:not(:last-child) {
   margin-right: 50px;
 }
 
 .site-nav-link,
 .auth-nav-link {
-  display: block;
+  display: flex;
   padding-top: 32px;
   padding-bottom: 32px;
+  justify-content: center;
+  align-items: center;
 }
 
 .site-nav,
@@ -159,8 +163,20 @@ img {
 
 /* Герой */
 .hero {
+  max-width: 1600px;
+  /* Репета наголошував на обов'язковому значенні висоти */
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-image: linear-gradient(
+      to right,
+      var(--bacground-gradient-color),
+      var(--bacground-gradient-color)
+    ),
+    url('../images/bg-img/bg-image.jpg');
 }
 
 /* Заголовок героя */
@@ -265,6 +281,10 @@ img {
 .team-item {
   display: block;
   width: 270px;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .member-title {
@@ -281,11 +301,13 @@ img {
   font-size: 16px;
   line-height: 1.2;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 .about-description {
   padding-top: 30px;
   padding-bottom: 30px;
+  background: var(--primary-white-color);
 }
 
 /* Колір фону героя і футера */
@@ -411,4 +433,133 @@ img {
   border-right: solid 1px var(--item-border-color);
   border-bottom: solid 1px var(--item-border-color);
   border-left: solid 1px var(--item-border-color);
+}
+
+/* Social icons */
+.social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--primary-white-color);
+  border-radius: 50%;
+}
+
+.social-icon {
+  fill: var(--icons-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+  fill: var(--primary-white-color);
+}
+
+/* Section Join */
+.join {
+  padding-top: 12px;
+}
+
+.join-text {
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+
+  margin-bottom: 20px;
+}
+
+.join .social-list {
+  justify-content: start;
+}
+
+.join .social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.join .social-link:hover,
+.join .social-link:focus {
+  background-color: var(--accent-color);
+}
+
+.join .social-icon {
+  fill: var(--primary-white-color);
+}
+
+.footer-box {
+  display: flex;
+}
+
+.address-information {
+  margin-right: 70px;
+}
+
+.benefits-box {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  background: var(--section-bg-color);
+  border-radius: 4px;
+
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.customers-list {
+  display: flex;
+  gap: 30px;
+}
+
+.customer-item {
+  flex-basis: calc(100% / 6);
+}
+
+.customer-icon {
+  fill: var(--icons-color);
+}
+
+.customer-link {
+  width: 100%;
+  height: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--icons-color);
+  border-radius: 4px;
+}
+
+.customer-link:hover,
+.customer-link:focus {
+  border-color: var(--accent-color);
+}
+
+.customer-link:hover > .customer-icon,
+.customer-link:focus > .customer-icon {
+  fill: var(--accent-color);
+}
+
+.contact-icon {
+  fill: currentColor;
+  margin-right: 10px;
 }
