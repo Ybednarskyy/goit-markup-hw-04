@@ -177,6 +177,9 @@ img {
       var(--bacground-gradient-color)
     ),
     url('../images/bg-img/bg-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Заголовок героя */
@@ -444,7 +447,8 @@ img {
   height: 100%;
 }
 
-.products-link:hover {
+.products-link:hover,
+.products-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -485,10 +489,6 @@ img {
 }
 
 /* Section Join */
-.join {
-  padding-top: 12px;
-}
-
 .join-text {
   font-weight: 700;
   line-height: 1.14;
@@ -518,6 +518,7 @@ img {
 
 .footer-box {
   display: flex;
+  align-items: baseline;
 }
 
 .address-information {
